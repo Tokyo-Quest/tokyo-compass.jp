@@ -706,6 +706,15 @@
                 document.getElementById('main-content').classList.add('hidden');
                 document.getElementById('thanks-view').classList.remove('hidden');
                 lucide.createIcons();
+
+                // ★ここに計測用コードを追加★
+                if (typeof gtag === 'function') {
+                    gtag('event', 'fake_door_reached', {
+                        value: 70,
+                        currency: 'USD',
+                        event_category: 'booking'
+                    });
+                }
             }, 1200);
         }
     </script>
